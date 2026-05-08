@@ -1,0 +1,4 @@
+[WARNING] MuseumLangAPI - 2025-11-28 16:27:06 - Modello non trovato in language_detection_pipeline.pkl: verrà scaricato.
+[INFO] MuseumLangAPI - 2025-11-28 16:27:06 - Tento il Download del modello dall'url: https://github.com/Profession-AI/progetti-python/raw/refs/heads/main/Messa%20in%20produzione%20di%20un%20sistema%20per%20il%20riconoscimento%20della%20lingua%20di%20testi%20per%20un%20museo/language_detection_pipeline.pkl
+[INFO] MuseumLangAPI - 2025-11-28 16:27:07 - Download del modello in language_detection_pipeline.pkl completato
+[INFO] MuseumLangAPI - 2025-11-28 16:27:14 - Richiesta OK - testo: ciao sono federico, lingua: IT, confidenza: 1.00

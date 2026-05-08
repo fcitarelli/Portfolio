@@ -1,0 +1,56 @@
+/* ── Global reset & base styles ──────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary:    #2563eb;
+  --color-primary-dk: #1d4ed8;
+  --color-danger:     #dc2626;
+  --color-danger-dk:  #b91c1c;
+  --color-success:    #16a34a;
+  --color-bg:         #f8fafc;
+  --color-card:       #ffffff;
+  --color-text:       #1e293b;
+  --color-muted:      #64748b;
+  --color-border:     #e2e8f0;
+  --color-tag-bg:     #dbeafe;
+  --color-tag-text:   #1d4ed8;
+  --radius:           8px;
+  --shadow:           0 1px 3px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md:        0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+  --transition:       0.2s ease;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+}

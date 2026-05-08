@@ -1,0 +1,201 @@
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Header ──────────────────────────────────────────────────────────────── */
+.app-header {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.header-brand h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: -0.5px;
+}
+
+.header-brand .tagline {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+/* ── Main content area ───────────────────────────────────────────────────── */
+.app-main {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* ── Footer ──────────────────────────────────────────────────────────────── */
+.app-footer {
+  background: #1e293b;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.85rem;
+}
+
+/* ── Shared button styles ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.1rem;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+  white-space: nowrap;
+}
+.btn:active { transform: scale(.97); }
+
+.btn-primary {
+  background: #fff;
+  color: var(--color-primary);
+}
+.btn-primary:hover { background: #eff6ff; }
+
+.btn-secondary {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.4);
+}
+.btn-secondary:hover { background: rgba(255,255,255,.25); }
+
+.btn-blue {
+  background: var(--color-primary);
+  color: #fff;
+}
+.btn-blue:hover { background: var(--color-primary-dk); }
+
+.btn-danger {
+  background: var(--color-danger);
+  color: #fff;
+}
+.btn-danger:hover { background: var(--color-danger-dk); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+.btn-ghost:hover { background: var(--color-bg); }
+
+.btn-sm { padding: 0.3rem 0.7rem; font-size: 0.8rem; }
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+/* ── Badge / tag ──────────────────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  background: var(--color-tag-bg);
+  color: var(--color-tag-text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 99px;
+}
+
+/* ── Error / info messages ────────────────────────────────────────────────── */
+.error-msg {
+  color: var(--color-danger);
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.info-msg {
+  color: var(--color-muted);
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+}
+
+/* ── Loading spinner ──────────────────────────────────────────────────────── */
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  margin: 2rem auto;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Form elements ────────────────────────────────────────────────────────── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.form-group input,
+.form-group textarea {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.55rem 0.85rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  color: var(--color-text);
+  background: #fff;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+.field-required { color: var(--color-danger); margin-left: 2px; }
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .app-header { padding: 0.75rem 1rem; }
+  .app-main   { padding: 1rem; }
+  .header-brand h1 { font-size: 1.3rem; }
+}

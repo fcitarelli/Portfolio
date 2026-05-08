@@ -1,0 +1,94 @@
+========================================================
+  SCHOLARPORT — Gestore di Portfolio Accademico
+  Preview del progetto e guida rapida all'avvio
+========================================================
+
+COSA RICHIEDE IL PROGETTO
+
+ScholarPort è una piattaforma dedicata ai ricercatori accademici per gestire in modo semplice ed efficace il loro portfolio di pubblicazioni.
+ Le funzionalità richieste sono:
+
+  • Inserimento e modifica di articoli (titolo, autori,
+    abstract, data di pubblicazione, DOI)
+  • Visualizzazione e aggiunta di citazioni per ogni
+    articolo
+  • Ricerca e filtro per titolo, autore o anno
+  • Interfaccia front-end moderna e responsive (React SPA)
+  • Back-end REST con operazioni CRUD complete
+  • Test funzionali (almeno 5 per componente chiave)
+  • Documentazione e commenti nel codice
+
+
+COME SI È DECISO DI PROCEDERE
+
+Stack scelto:
+  - Backend:   Node.js + Express (API REST su porta 5000)
+  - Database:  SQLite via better-sqlite3
+                 zero-config, nessun servizio esterno,
+                 valido come alternativa SQL.
+  - Frontend:  React 18 + Vite 5 (SPA su porta 3000)
+  - Test BE:   Jest + Supertest (27 test, DB in-memory)
+  - Test FE:   Vitest + React Testing Library (36 test)
+
+Scelte implementative principali:
+  - Navigazione tra le viste (lista/dettaglio/form)
+    gestita via stato React — nessun router extra
+  - Filtri di ricerca con debounce (400 ms) per ridurre
+    le chiamate API durante la digitazione
+  - In modalità test il backend usa un DB SQLite
+    in-memory: i test non toccano mai il filesystem
+  - Il proxy Vite (/api → localhost:5000) elimina ogni
+    problema di CORS in sviluppo
+
+
+PREREQUISITI
+
+  • Node.js v20.20.1:  versione raccomandata
+    (versioni diverse possono causare errori di
+     compilazione di better-sqlite3)
+  • npm >= 9.x (incluso con Node.js)
+
+  Verifica con:
+    node --version    
+    npm --version     
+
+
+INSTALLAZIONE
+
+Aprire il terminale nella cartella PROGETTO ed eseguire:
+
+  cd backend
+  npm install
+
+  cd ../frontend
+  npm install
+
+
+AVVIO DELL'APPLICAZIONE
+
+Servono DUE terminali aperti in contemporanea.
+
+  [Terminale 1 — Backend]
+    cd backend
+    npm run dev
+    → Server avviato su http://localhost:5000
+
+  [Terminale 2 — Frontend]
+    cd frontend
+    npm run dev
+    → App disponibile su http://localhost:3000
+
+  Aprire il browser su: http://localhost:3000
+
+
+ESECUZIONE DEI TEST
+
+  Test backend (27 test):
+    cd backend
+    npm test
+
+  Test frontend (36 test):
+    cd frontend
+    npm test
+
+
