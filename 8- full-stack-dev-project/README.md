@@ -319,7 +319,3 @@ In questo modo un unico processo Node.js serve sia l'API sia la SPA.
 | `NODE_ENV`  | `development`   | `test` → DB in-memory per i test  |
 
 ---
-
-## Autore
-
-Progetto sviluppato nell'ambito del corso **AI Developer** di ProfessionAI — Modulo 10: *Full-Stack Development*.
