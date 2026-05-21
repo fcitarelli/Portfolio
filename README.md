@@ -1,6 +1,6 @@
 # Portfolio AI Developer – Progetti di Certificazione
 
-Benvenuto nel mio repository portfolio! Questa raccolta include progetti pratici che spaziano dal Machine Learning classico alla Generative AI, fino allo sviluppo Full-Stack e alla gestione di agenti intelligenti.
+Benvenuto nel mio portfolio! Questa raccolta include progetti pratici che spaziano dal Machine Learning classico alla Generative AI, fino allo sviluppo Full-Stack e alla gestione di agenti intelligenti.
 
 ---
 
